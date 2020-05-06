@@ -7,3 +7,5 @@ This included:
 Nimbus - a command for ios which starts activtor listeners
 
 Texthider - available for windows and linux, hide text in binary files, 
+
+iterm - ssh to iphone with wsl from windows
