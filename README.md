@@ -4,7 +4,7 @@ Just a place to keep all of my small scripts together, for linux, windows, ios, 
 
 This included:
 
-Nimbus - a command for ios which starts activtor listeners
+Nimbus - a command for ios which starts activator listeners
 
 Texthider - available for windows and linux, hide text in binary files, 
 
