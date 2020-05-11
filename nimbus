@@ -23,21 +23,13 @@ if [ $1 = "screenshot" ]; then
  activator send libactivator.system.take-screenshot
  echo Screenshot saved in gallery.
 fi
-if [ $1 = "increase-audio" ]; then
- activator send libactivator.audio.increase-volume
- echo Volume increased.
+if [ $1 = "vol" ]; then
+ activator send libactivator.audio.$2-volume
+ echo Volume changed
 fi
-if [ $1 = "decrease-brightness" ]; then
- activator send libactivator.screen.brightness.decrease
- echo Brightness decreased.
-fi
-if [ $1 = "increase-brightness" ]; then
- activator send libactivator.screen.brightness.increase
- echo Brightness increased.
-fi
-if [ $1 = "decrease-audio" ]; then
- activator send libactivator.audio.decrease-volume
- echo Volume decreased.
+if [ $1 = "brightness" ]; then
+ activator send libactivator.screen.brightness.$2
+ echo Brightness changed
 fi
 if [ $1 = "switcher" ]; then
  activator send libactivator.system.activate-switcher
@@ -88,7 +80,7 @@ if [ $1 = "help" ]; then
  echo settings preference panel name - open specified preference panel in settings.
  echo cc - open Control Center.
  echo screenshot - make a screenshot.
- echo increase or decrease - audio or brightness - increase or decrease audio or brightness - ex. - increase-brightness.
+ echo vol/brightness increase/decrease - increase or decrease audio or brightness
  echo switcher - opens app switcher.
  echo nc - opens Notification Center.
  echo answer or decline - answer or decline a call - ex. answer-call.
@@ -143,10 +135,10 @@ if [ $1 = "hotspot" ]; then
  activator send switch-$2.com.a3tweaks.switch.hotspot
  echo Turning mobile hotspot $2
 fi
-if [ -z $1 ]; then
- echo You must specify a command, type "nimbus help" for a list of commands
-fi
 if [ $1 = "unlock" ]; then
  activator send com.giorgioiavicoli.passby.unlock
  echo Unlocking device
+fi
+if [ -z $1 ]; then
+ echo You must specify a command, type "nimbus help" for a list of commands
 fi
