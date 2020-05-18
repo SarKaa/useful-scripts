@@ -5,4 +5,4 @@ set /P c= sftp or ssh?
 goto :ssh
 :ssh
 echo type in your root password (default is alpine)
-wsl -e %c% root@%i%
+%c% root@%i%
